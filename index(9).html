@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Croquis de Localização em Luanda | RRESOLVEMOS/360 SERVIÇOS</title>
+<meta name="description" content="Croquis de localização profissional com coordenadas GPS, para legalização de terrenos, licenças e contratos de energia e água em Luanda. Preço promocional de 10.000 Kz, entrega em 4 horas. Peça pelo WhatsApp.">
+<meta name="theme-color" content="#0A2C52">
+<style>
+:root{
+  --bg:#F6F9FC; --surface:#FFFFFF; --ink:#0B2540; --muted:#46607C; --line:#C9D6E4;
+  --blue:#0F3D6E; --blue-deep:#0A2C52; --accent:#F2B705; --wa:#0F8A43; --wa-hover:#0B7338;
+  --paper:#FDFEFF; --paper-ink:#0F3D6E;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#07182C; --surface:#0C2340; --ink:#E8F0F8; --muted:#A3B8CE; --line:#21415F;
+    --wa:#17A152; --wa-hover:#1DB45E;
+  }
+  color-scheme: dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* Botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:1rem;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-hover)}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn svg{width:22px;height:22px;fill:currentColor;flex:none}
+
+/* Topo */
+.top{
+  background-color:var(--blue-deep);color:#fff;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:80px 80px,80px 80px,16px 16px,16px 16px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;padding:18px 0;font-weight:800;letter-spacing:.02em;font-size:.95rem;
+}
+.brand i{
+  width:34px;height:34px;border:2px solid var(--accent);border-radius:50%;
+  display:grid;place-items:center;font-style:normal;font-size:.68rem;color:var(--accent);flex:none;
+}
+.hero{display:grid;gap:32px;padding:20px 0 56px}
+.hero h1{font-size:clamp(2rem,7.5vw,3.3rem);line-height:1.08;letter-spacing:-.02em;max-width:15ch}
+.hero p.lead{margin-top:16px;font-size:1.1rem;color:#D3E1F0;max-width:44ch}
+.deal{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;align-items:baseline}
+.deal b{font-size:2rem;line-height:1;color:var(--accent);letter-spacing:-.01em}
+.deal small{display:block;font-size:.85rem;color:#D3E1F0;margin-top:4px}
+.deal div+div{padding-left:22px;border-left:1px solid rgba(255,255,255,.3)}
+.deal div+div b{color:#fff}
+.price-box{display:grid;gap:0;border:2px solid var(--blue);border-radius:10px;overflow:hidden;background:var(--surface)}
+.price-box div{padding:22px}
+.price-box div+div{border-top:1px solid var(--line)}
+.price-box .big{font-size:2.2rem;font-weight:800;line-height:1.1;color:var(--blue);letter-spacing:-.01em}
+.price-box .tag{display:inline-block;background:var(--accent);color:#0B2540;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.price-box p{color:var(--muted);margin-top:6px}
+@media (prefers-color-scheme: dark){.price-box .big{color:var(--accent)}}
+@media (min-width:820px){.price-box{grid-template-columns:1fr 1fr}.price-box div+div{border-top:0;border-left:1px solid var(--line)}}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.sheet{
+  background:var(--paper);border-radius:6px;padding:10px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.5), 0 18px 40px rgba(0,0,0,.35);
+  align-self:center;
+}
+.sheet svg{display:block;width:100%;height:auto}
+.sheet figcaption{font-size:.8rem;color:#46607C;padding:8px 4px 2px}
+.draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .3s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fadein{opacity:0;animation:fade .6s 2s ease-out forwards}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .draw{animation:none;stroke-dashoffset:0}
+  .fadein{animation:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+
+/* Secções */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:clamp(1.55rem,5vw,2.1rem);line-height:1.15;letter-spacing:-.01em;margin-bottom:10px}
+.sub{color:var(--muted);max-width:60ch;margin-bottom:28px}
+
+.uses{list-style:none;display:grid;gap:0;border-top:2px solid var(--blue)}
+.uses li{padding:16px 0;border-bottom:1px solid var(--line)}
+.uses strong{display:block;font-size:1.05rem}
+.uses span{color:var(--muted);font-size:.97rem}
+.note{margin-top:18px;font-size:.93rem;color:var(--muted);border-left:4px solid var(--accent);padding-left:12px}
+
+.steps{list-style:none;counter-reset:s;display:grid;gap:22px}
+.steps li{counter-increment:s;position:relative;padding-left:58px}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;
+  background:var(--blue);color:#fff;font-weight:800;display:grid;place-items:center;font-size:1.1rem;
+}
+.steps strong{display:block;font-size:1.08rem}
+.steps span{color:var(--muted)}
+
+.two{display:grid;gap:36px}
+.check{list-style:none;display:grid;gap:12px}
+.check li{padding-left:34px;position:relative}
+.check li::before{
+  content:"";position:absolute;left:0;top:.35em;width:20px;height:20px;border-radius:4px;background:var(--blue);
+}
+.check li::after{
+  content:"";position:absolute;left:6px;top:.52em;width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);
+}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px}
+.panel h3{font-size:1.1rem;margin-bottom:10px}
+.panel p{color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:10px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--muted);font-weight:600}
+.tcap{font-size:.8rem;color:var(--muted);margin-top:8px}
+
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blue)}
+@media (prefers-color-scheme: dark){summary::after{color:var(--accent)}}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:var(--muted);max-width:62ch}
+
+.final{background:var(--blue-deep);color:#fff;border-radius:12px;padding:36px 24px;text-align:left}
+.final h2{color:#fff}
+.final p{color:#D3E1F0;max-width:50ch;margin-bottom:22px}
+
+footer{padding:34px 0 110px;color:var(--muted);font-size:.93rem}
+footer strong{color:var(--ink)}
+
+/* WhatsApp flutuante */
+.float{
+  position:fixed;right:16px;bottom:16px;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3);
+  border-radius:999px;min-height:56px;padding:14px 20px;
+}
+
+@media (min-width:820px){
+  body{font-size:18px}
+  .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding:40px 0 80px}
+  .two{grid-template-columns:1fr 1fr;gap:56px}
+  .uses{grid-template-columns:1fr 1fr;column-gap:40px}
+  .final{padding:48px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><i>360</i><span>RRESOLVEMOS/360 SERVIÇOS</span></div>
+
+    <div class="hero">
+      <div>
+        <h1>Croquis de localização para legalizar o seu terreno</h1>
+        <p class="lead">Documento com mapa, coordenadas GPS e carimbo, pronto a imprimir. Envie a localização pelo WhatsApp e nós tratamos do resto.</p>
+        <div class="deal">
+          <div><b>10.000 Kz</b><small>Preço promocional</small></div>
+          <div><b>4 horas</b><small>Prazo de entrega</small></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="https://wa.me/244943804370?text=Ol%C3%A1%2C%20quero%20um%20croquis%20de%20localiza%C3%A7%C3%A3o%20para%20" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+            Pedir croquis no WhatsApp
+          </a>
+          <a class="btn btn-line" href="#como-funciona">Como funciona</a>
+        </div>
+      </div>
+
+      <figure class="sheet">
+        <svg viewBox="0 0 360 300" role="img" aria-label="Exemplo de croquis de localização com terreno, vértices, seta do norte e carimbo">
+          <rect x="4" y="4" width="352" height="292" fill="none" stroke="#0F3D6E" stroke-width="1.5"/>
+          <rect x="10" y="10" width="340" height="280" fill="none" stroke="#0F3D6E" stroke-width=".6"/>
+          <g stroke="#C9D6E4" stroke-width=".6">
+            <path d="M10 60H350M10 110H350M10 160H350M10 210H350M10 260H350"/>
+            <path d="M60 10V290M110 10V290M160 10V290M210 10V290M260 10V290M310 10V290"/>
+          </g>
+          <!-- terreno -->
+          <polygon class="draw" points="72,92 205,68 262,142 226,226 96,206" fill="rgba(15,61,110,.10)" stroke="#0F3D6E" stroke-width="2.4" stroke-linejoin="round"/>
+          <g class="fadein">
+            <g fill="#F2B705" stroke="#0F3D6E" stroke-width="1.5">
+              <circle cx="72" cy="92" r="5"/><circle cx="205" cy="68" r="5"/><circle cx="262" cy="142" r="5"/><circle cx="226" cy="226" r="5"/><circle cx="96" cy="206" r="5"/>
+            </g>
+            <g font-family="system-ui,Arial,sans-serif" font-size="11" font-weight="700" fill="#0F3D6E">
+              <text x="48" y="90">P1</text><text x="204" y="58">P2</text><text x="271" y="146">P3</text><text x="232" y="242">P4</text><text x="70" y="222">P5</text>
+            </g>
+            <g font-family="system-ui,Arial,sans-serif" font-size="9.5" fill="#46607C">
+              <text x="120" y="72" transform="rotate(-10 120 72)">42,10 m</text>
+              <text x="250" y="100" transform="rotate(53 250 100)">31,60 m</text>
+              <text x="252" y="196" transform="rotate(-61 252 196)">28,40 m</text>
+              <text x="140" y="222">34,80 m</text>
+              <text x="64" y="150" transform="rotate(-82 64 150)">29,50 m</text>
+            </g>
+            <text x="150" y="150" font-family="system-ui,Arial,sans-serif" font-size="13" font-weight="800" fill="#0F3D6E" text-anchor="middle">TERRENO</text>
+            <text x="150" y="166" font-family="system-ui,Arial,sans-serif" font-size="10" fill="#46607C" text-anchor="middle">Área: 1 120 m²</text>
+            <!-- norte -->
+            <g transform="translate(318 44)">
+              <circle r="20" fill="none" stroke="#0F3D6E" stroke-width="1.2"/>
+              <path d="M0-17L6 6 0 2-6 6Z" fill="#0F3D6E"/>
+              <text y="-23" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-size="11" font-weight="800" fill="#0F3D6E">N</text>
+            </g>
+            <!-- escala -->
+            <g transform="translate(20 266)" font-family="system-ui,Arial,sans-serif" font-size="9" fill="#0F3D6E">
+              <rect width="30" height="5" fill="#0F3D6E"/><rect x="30" width="30" height="5" fill="none" stroke="#0F3D6E"/>
+              <text y="16">0</text><text x="26" y="16">20</text><text x="56" y="16">40 m</text>
+            </g>
+            <!-- carimbo -->
+            <g transform="translate(226 244)" font-family="system-ui,Arial,sans-serif" fill="#0F3D6E">
+              <rect width="118" height="40" fill="#fff" stroke="#0F3D6E" stroke-width="1.2"/>
+              <path d="M0 14H118" stroke="#0F3D6E" stroke-width=".8"/>
+              <text x="6" y="11" font-size="8" font-weight="800">CROQUIS DE LOCALIZAÇÃO</text>
+              <text x="6" y="26" font-size="8">N.º ____ / 2026</text>
+              <text x="6" y="36" font-size="7" fill="#46607C">Assinatura do requerente</text>
+            </g>
+          </g>
+        </svg>
+        <figcaption>Exemplo ilustrativo. Os dados são fictícios.</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section id="para-que-serve">
+      <h2>Para que serve o croquis</h2>
+      <p class="sub">É o desenho que mostra onde fica o terreno ou o local, com medidas e coordenadas. Costuma ser pedido nestes casos:</p>
+      <ul class="uses">
+        <li><strong>Legalização de terreno</strong><span>Para apresentar junto dos serviços responsáveis pela legalização.</span></li>
+        <li><strong>Licença comercial e alvará</strong><span>Para comprovar a localização do seu negócio.</span></li>
+        <li><strong>Energia e água</strong><span>Para pedidos de contrato e ligação.</span></li>
+        <li><strong>Registo predial e cartório</strong><span>Para instruir processos de registo.</span></li>
+        <li><strong>Igrejas, associações e empresas</strong><span>Para regularizar o espaço onde funcionam.</span></li>
+        <li><strong>Compra e venda de imóveis</strong><span>Para mostrar com clareza o que está a ser negociado.</span></li>
+      </ul>
+      <p class="note">Cada entidade pode ter exigências próprias. Antes de pedir, confirme se precisam de algum modelo ou formato específico e diga-nos pelo WhatsApp.</p>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Como funciona</h2>
+      <p class="sub">Tudo pelo telemóvel, sem sair de casa.</p>
+      <ol class="steps">
+        <li><strong>Envie os dados pelo WhatsApp</strong><span>Basta o pin de localização do terreno ou a memória descritiva.</span></li>
+        <li><strong>Preparamos o croquis</strong><span>Marcamos os pontos, calculamos as medidas e montamos o documento.</span></li>
+        <li><strong>Receba o PDF</strong><span>Confirme os dados e receba o ficheiro pronto para imprimir.</span></li>
+      </ol>
+    </section>
+
+    <section id="o-que-recebe">
+      <div class="two">
+        <div>
+          <h2>O que vem no croquis</h2>
+          <p class="sub">Um documento completo e legível, com qualidade para impressão.</p>
+          <ul class="check">
+            <li>Desenho do terreno com mapa de localização</li>
+            <li>Quadro de coordenadas de cada vértice</li>
+            <li>Medidas dos lados e área</li>
+            <li>Seta do norte e escala</li>
+            <li>Número do croquis e carimbo</li>
+            <li>Espaço para assinatura do requerente</li>
+            <li>PDF pronto a imprimir</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>O que precisamos de si</h3>
+          <p>Uma destas opções para começar:</p>
+          <ul class="check" style="margin-top:14px">
+            <li>O pin de localização enviado pelo WhatsApp</li>
+            <li>A memória descritiva do terreno</li>
+            <li>Nome do requerente e para que serve o croquis</li>
+          </ul>
+          <table aria-label="Exemplo de quadro de coordenadas">
+            <thead><tr><th>Vértice</th><th>Latitude</th><th>Longitude</th></tr></thead>
+            <tbody>
+              <tr><td>P1</td><td>-8,8390</td><td>13,2894</td></tr>
+              <tr><td>P2</td><td>-8,8387</td><td>13,2898</td></tr>
+              <tr><td>P3</td><td>-8,8391</td><td>13,2902</td></tr>
+            </tbody>
+          </table>
+          <p class="tcap">Exemplo do quadro de coordenadas. Valores fictícios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="preco">
+      <h2>Preço e prazo</h2>
+      <p class="sub">Um valor claro, sem surpresas.</p>
+      <div class="price-box">
+        <div>
+          <span class="tag">Promoção</span>
+          <p class="big">10.000 Kz</p>
+          <p>Por croquis de localização, em PDF.</p>
+        </div>
+        <div>
+          <span class="tag">Rápido</span>
+          <p class="big">4 horas</p>
+          <p>Prazo de entrega, contado a partir do momento em que recebemos os dados completos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="perguntas">
+      <h2>Perguntas frequentes</h2>
+      <details>
+        <summary>Qual é o prazo e o valor?</summary>
+        <p>O valor promocional é 10.000 Kz por croquis e o prazo de entrega é de 4 horas, a contar da receção dos dados completos.</p>
+      </details>
+      <details>
+        <summary>Só tenho o pin de localização. Serve?</summary>
+        <p>Serve para começar. Se faltar alguma informação, dizemos-lhe o que é preciso, por exemplo as medidas ou a memória descritiva.</p>
+      </details>
+      <details>
+        <summary>Posso pedir mais de um croquis?</summary>
+        <p>Sim. Pode pedir para vários terrenos ou para finalidades diferentes. Diga no WhatsApp o que precisa.</p>
+      </details>
+      <details>
+        <summary>Como recebo o documento?</summary>
+        <p>Em PDF, pelo WhatsApp. Pode imprimir onde preferir.</p>
+      </details>
+    </section>
+
+    <section id="contacto" style="border-bottom:0">
+      <div class="final">
+        <h2>Precisa de um croquis?</h2>
+        <p>Envie a localização do terreno e diga para que precisa do documento. Respondemos pelo WhatsApp.</p>
+        <a class="btn btn-wa" href="https://wa.me/244943804370?text=Ol%C3%A1%2C%20quero%20um%20croquis%20de%20localiza%C3%A7%C3%A3o%20para%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+          WhatsApp 943 804 370
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>RRESOLVEMOS/360 SERVIÇOS</strong></p>
+    <p>Croquis de localização em Luanda, Angola.</p>
+    <p>WhatsApp: 943 804 370</p>
+  </div>
+</footer>
+
+<a class="btn btn-wa float" href="https://wa.me/244943804370?text=Ol%C3%A1%2C%20quero%20um%20croquis%20de%20localiza%C3%A7%C3%A3o%20para%20" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+  WhatsApp
+</a>
+
+</body>
+</html>
